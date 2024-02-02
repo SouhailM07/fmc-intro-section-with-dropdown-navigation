@@ -1,6 +1,11 @@
 import "./mycontainer.css";
 // components
+import { Navbar } from "../../components";
 
 export default function MyContainer() {
-  return <>MyContainer</>;
+  return (
+    <>
+      <Navbar />
+    </>
+  );
 }
