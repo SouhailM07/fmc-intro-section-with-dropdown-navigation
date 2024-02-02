@@ -16,10 +16,10 @@ export default function Main() {
       <main className="lg:px-[1rem] max-w-[52rem] max-lg:flex-col-reverse mt-[1rem] mx-auto items-center lg:items-end  flex justify-between">
         <article className="flex  flex-col max-lg:max-w-[30rem]  lg:w-[50%] justify-between h-[17rem] lg:h-[22rem] ">
           <section className="flex flex-col h-[10rem] max-lg:mt-[2rem] lg:h-[15rem] max-lg:px-[0.6rem] justify-between max-lg:text-center max-lg:items-center">
-            <h1 className="lg:text-[3rem] lg:w-[20rem] text-[1.6rem] font-bold lg:leading-[3.2rem]">
+            <h1 className="lg:text-[3rem] lg:w-[18rem] text-[1.6rem] font-bold lg:leading-[3.2rem]">
               Make remote work
             </h1>
-            <p className="text-[0.7rem] max-w-[18rem] text-MediumGray max-lg:my-[1rem]">
+            <p className="text-[0.7rem] max-w-[18rem]  text-MediumGray max-lg:my-[1rem]">
               Get your team in sync, no matter your location. Streamline
               processes, create team rituals, and watch productivity soar.
             </p>
@@ -37,6 +37,8 @@ export default function Main() {
                       alt="logo"
                       draggable={false}
                       className="max-lg:w-[3.1rem]"
+                      width="100%"
+                      height="100%"
                     />
                   </li>
                 );
