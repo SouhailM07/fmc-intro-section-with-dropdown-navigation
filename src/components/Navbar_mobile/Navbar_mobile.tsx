@@ -19,10 +19,11 @@ export default function Navbar_mobile() {
           <section className="flex justify-end p-3">
             <img
               src={close_logo}
-              alt="close menubar logo"
+              alt="logo"
+              aria-label="close menubar "
               role="button"
-              height="100%"
-              width="100%"
+              height={30}
+              width={30}
               onClick={() => setToggleMenu(false)}
             />
           </section>

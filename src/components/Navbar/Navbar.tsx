@@ -46,11 +46,12 @@ export default function Navbar() {
           </div>
           <img
             src={menu_logo}
-            alt="open menubar"
+            alt="logo"
+            aria-label="open menubar"
             role="button"
             className="lg:hidden"
-            height="100%"
-            width="100%"
+            height={30}
+            width={30}
             onClick={() => setToggleMenu(true)}
           />
           <div className="text-MediumGray space-x-[2rem] max-lg:hidden">
