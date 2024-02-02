@@ -62,7 +62,6 @@ export default function Main() {
             width="100%"
             height="100%"
             className="lg:hidden"
-            style={{ aspectRatio: "2/1.5" }}
           />
         </section>
       </main>

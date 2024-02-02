@@ -49,6 +49,8 @@ export default function Navbar() {
             alt="open menubar"
             role="button"
             className="lg:hidden"
+            height="100%"
+            width="100%"
             onClick={() => setToggleMenu(true)}
           />
           <div className="text-MediumGray space-x-[2rem] max-lg:hidden">
@@ -80,7 +82,7 @@ let Features_select = () => {
   return (
     <>
       <Select>
-        <SelectTrigger className="w-[180px]">
+        <SelectTrigger className="w-[180px]" aria-label="Features dropdown">
           <SelectValue placeholder="Features" />
         </SelectTrigger>
         <SelectContent>
@@ -106,7 +108,7 @@ let Company_select = () => {
   return (
     <>
       <Select>
-        <SelectTrigger className="w-[180px]">
+        <SelectTrigger className="w-[180px]" aria-label="Company dropdown">
           <SelectValue placeholder="Company" />
         </SelectTrigger>
         <SelectContent>

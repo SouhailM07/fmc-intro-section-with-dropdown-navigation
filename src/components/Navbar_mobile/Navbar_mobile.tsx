@@ -21,6 +21,8 @@ export default function Navbar_mobile() {
               src={close_logo}
               alt="close menubar logo"
               role="button"
+              height="100%"
+              width="100%"
               onClick={() => setToggleMenu(false)}
             />
           </section>
