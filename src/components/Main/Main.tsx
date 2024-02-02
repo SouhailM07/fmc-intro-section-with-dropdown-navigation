@@ -2,8 +2,8 @@ import "./main.css";
 // shadcn
 import { Button } from "../ui/button";
 // assets
-import img_lg from "/image-hero-desktop.png";
-import img_sm from "/image-hero-mobile.png";
+import img_lg from "/image-hero-desktop.webp";
+import img_sm from "/image-hero-mobile.webp";
 import client_1 from "/client-databiz.svg";
 import client_2 from "/client-audiophile.svg";
 import client_3 from "/client-meet.svg";
@@ -14,7 +14,7 @@ export default function Main() {
   return (
     <>
       <main className="lg:px-[1rem] max-w-[52rem] max-lg:flex-col-reverse mt-[1rem] mx-auto items-center lg:items-end  flex justify-between">
-        <article className="flex flex-col max-lg:w-full w-[50%] justify-between h-[17rem] lg:h-[22rem] ">
+        <article className="flex  flex-col max-lg:max-w-[30rem]  lg:w-[50%] justify-between h-[17rem] lg:h-[22rem] ">
           <section className="flex flex-col h-[10rem] max-lg:mt-[2rem] lg:h-[15rem] max-lg:px-[0.6rem] justify-between max-lg:text-center max-lg:items-center">
             <h1 className="lg:text-[3rem] lg:w-[20rem] text-[1.6rem] font-bold lg:leading-[3.2rem]">
               Make remote work
@@ -36,7 +36,7 @@ export default function Main() {
                       src={e}
                       alt="logo"
                       draggable={false}
-                      className="max-lg:w-[3.2rem]"
+                      className="max-lg:w-[3.1rem]"
                     />
                   </li>
                 );
@@ -44,7 +44,7 @@ export default function Main() {
             </ul>
           </section>
         </article>
-        <section className="h-full flex justify-end max-lg:max-w-[30rem]">
+        <section className="h-full flex justify-end max-lg:max-w-[20rem]">
           <img
             src={img_lg}
             alt="image"
@@ -60,6 +60,7 @@ export default function Main() {
             width="100%"
             height="100%"
             className="lg:hidden"
+            style={{ aspectRatio: "2/1.5" }}
           />
         </section>
       </main>
