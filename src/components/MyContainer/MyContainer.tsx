@@ -6,7 +6,7 @@ export default function MyContainer() {
   return (
     <>
       <Navbar />
-      {/* <Main /> */}
+      <Main />
     </>
   );
 }

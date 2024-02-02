@@ -3,3 +3,8 @@
 @tailwind utilities;
 @layer components {
 }
+
+nav ul li,
+button {
+  @apply text-MediumGray hover:text-black hover:border-black;
+}

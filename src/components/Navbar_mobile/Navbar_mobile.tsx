@@ -1,9 +1,14 @@
 import "./navbar_mobile.css";
 // assist
 import close_logo from "/icon-close-menu.svg";
+import select_img_1 from "/icon-todo.svg";
+import select_img_2 from "/icon-calendar.svg";
+import select_img_3 from "/icon-reminders.svg";
+import select_img_4 from "/icon-planning.svg";
+import arrowLogo from "/icon-arrow-up.svg";
 // context
 import { ToggleContext } from "../Navbar/Navbar";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 export default function Navbar_mobile() {
   let { setToggleMenu }: any = useContext(ToggleContext);
@@ -21,8 +26,8 @@ export default function Navbar_mobile() {
           </div>
           {/*  */}
           <ul className="space-y-[1rem] pl-[1rem] my-[1rem]">
-            <li>Features</li>
-            <li>Company</li>
+            <Features_dropdown />
+            <Company_dropdown />
             <li>Careers</li>
             <li>About</li>
           </ul>
@@ -37,3 +42,77 @@ export default function Navbar_mobile() {
     </>
   );
 }
+
+let Features_dropdown = () => {
+  interface selectItem_type {
+    img: string;
+    select: string;
+  }
+  let selectItems: selectItem_type[] = [
+    { img: select_img_1, select: "Todo List" },
+    { img: select_img_2, select: "Calendar" },
+    { img: select_img_3, select: "Reminders" },
+    { img: select_img_4, select: "Planning" },
+  ];
+  let [toggleDD, setToggleDD] = useState<boolean>(false);
+  return (
+    <>
+      <li>
+        <button
+          className="flex space-x-[0.8rem] items-center"
+          onClick={() => setToggleDD(!toggleDD)}
+        >
+          <span>Features</span>
+          <img
+            src={arrowLogo}
+            alt="logo"
+            className={`${toggleDD ? "rotate-180" : ""}`}
+          />
+        </button>
+        {toggleDD && (
+          <ul className="space-y-[0.7rem] my-[1rem] pl-[1rem]">
+            {selectItems.map((e, i) => {
+              return (
+                <li key={i} className="flex space-x-[0.7rem] items-center">
+                  <img src={e.img} alt="" />
+                  <p>{e.select}</p>
+                </li>
+              );
+            })}
+          </ul>
+        )}
+      </li>
+    </>
+  );
+};
+
+let Company_dropdown = () => {
+  let selectItems: string[] = ["History", "Our Team", "Blog"];
+  let [toggleDD, setToggleDD] = useState<boolean>(false);
+  return (
+    <li>
+      <button
+        className="flex space-x-[0.8rem] items-center"
+        onClick={() => setToggleDD(!toggleDD)}
+      >
+        <span>Company</span>
+        <img
+          src={arrowLogo}
+          alt="logo"
+          className={`${toggleDD ? "rotate-180" : ""}`}
+        />
+      </button>
+      {toggleDD && (
+        <ul className="space-y-[0.7rem] my-[1rem] pl-[1rem]">
+          {selectItems.map((e, i) => {
+            return (
+              <li key={i} className="flex space-x-[0.7rem] items-center">
+                <p>{e}</p>
+              </li>
+            );
+          })}
+        </ul>
+      )}
+    </li>
+  );
+};
