@@ -1,4 +1,8 @@
 import "./navbar.css";
+// hooks
+import React, { useState } from "react";
+// components
+import { Navbar_mobile } from "../../components";
 // shadcn
 import {
   Select,
@@ -14,15 +18,19 @@ import select_img_1 from "/icon-todo.svg";
 import select_img_2 from "/icon-calendar.svg";
 import select_img_3 from "/icon-reminders.svg";
 import select_img_4 from "/icon-planning.svg";
+import menu_logo from "/icon-menu.svg";
+
+export const ToggleContext: any = React.createContext("");
 
 export default function Navbar() {
+  let [toggleMenu, setToggleMenu] = useState<boolean>(false);
   return (
     <>
       <header className="max-w-[64rem] mx-auto">
-        <nav className="flex justify-between text-[18px] px-[2rem] items-center py-[0.7rem]">
+        <nav className="flex justify-between text-[18px] px-[1rem] lg:px-[2rem] items-center py-[0.7rem]">
           <div className="flex space-x-[2rem] items-center justify-between">
             <img src={nav_logo} alt="logo" width="84" height="27" />
-            <ul className=" items-center flex justify-between w-[22rem] *:cursor-pointer">
+            <ul className="max-lg:hidden items-center flex justify-between w-[22rem] *:cursor-pointer">
               <li>
                 <Features_select />
               </li>
@@ -33,13 +41,23 @@ export default function Navbar() {
               <li>About</li>
             </ul>
           </div>
-          <div className="text-MediumGray space-x-[2rem]">
+          <img
+            src={menu_logo}
+            alt="open menubar"
+            role="button"
+            className="lg:hidden"
+            onClick={() => setToggleMenu(true)}
+          />
+          <div className="text-MediumGray space-x-[2rem] max-lg:hidden">
             <button>Login</button>
             <button className="border-2 border-MediumGray px-[1.3rem] py-[0.4rem] rounded-lg">
               Register
             </button>
           </div>
         </nav>
+        <ToggleContext.Provider value={{ toggleMenu, setToggleMenu }}>
+          {toggleMenu && <Navbar_mobile />}
+        </ToggleContext.Provider>
       </header>
     </>
   );
