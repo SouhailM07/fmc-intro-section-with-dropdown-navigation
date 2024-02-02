@@ -30,15 +30,18 @@ export default function Navbar() {
         <nav className="flex justify-between text-[18px] px-[1rem] lg:px-[2rem] items-center py-[0.7rem]">
           <div className="flex space-x-[2rem] items-center justify-between">
             <img src={nav_logo} alt="logo" width="84" height="27" />
-            <ul className="max-lg:hidden items-center flex justify-between w-[22rem] *:cursor-pointer">
-              <li>
+            <ul
+              role="list"
+              className="max-lg:hidden items-center flex justify-between w-[22rem] *:cursor-pointer"
+            >
+              <li role="listitem">
                 <Features_select />
               </li>
-              <li>
+              <li role="listitem">
                 <Company_select />
               </li>
-              <li>Careers</li>
-              <li>About</li>
+              <li role="listitem">Careers</li>
+              <li role="listitem">About</li>
             </ul>
           </div>
           <img

@@ -15,29 +15,29 @@ export default function Navbar_mobile() {
   return (
     <>
       <div className="bg-[#000000bf] h-full text-[0.7rem] flex justify-end  top-0 fixed w-full text-MediumGray">
-        <div className="bg-AlmostWhite h-full w-[11rem]">
-          <div className="flex justify-end p-3">
+        <article className="bg-AlmostWhite h-full w-[11rem]">
+          <section className="flex justify-end p-3">
             <img
               src={close_logo}
               alt="close menubar logo"
               role="button"
               onClick={() => setToggleMenu(false)}
             />
-          </div>
+          </section>
           {/*  */}
-          <ul className="space-y-[1rem] pl-[1rem] my-[1rem]">
+          <ul role="list" className="space-y-[1rem] pl-[1rem] my-[1rem]">
             <Features_dropdown />
             <Company_dropdown />
-            <li>Careers</li>
-            <li>About</li>
+            <li role="listitem">Careers</li>
+            <li role="listitem">About</li>
           </ul>
-          <div className=" flex flex-col items-center">
+          <section className=" flex flex-col items-center">
             <button className="py-[0.5rem]">Login</button>
             <button className="border-2 border-MediumGray w-[90%] tex-center py-[0.4rem] rounded-xl">
               Register
             </button>
-          </div>
-        </div>
+          </section>
+        </article>
       </div>
     </>
   );
@@ -57,7 +57,7 @@ let Features_dropdown = () => {
   let [toggleDD, setToggleDD] = useState<boolean>(false);
   return (
     <>
-      <li>
+      <li role="listitem">
         <button
           className="flex space-x-[0.8rem] items-center"
           onClick={() => setToggleDD(!toggleDD)}
@@ -70,11 +70,15 @@ let Features_dropdown = () => {
           />
         </button>
         {toggleDD && (
-          <ul className="space-y-[0.7rem] my-[1rem] pl-[1rem]">
+          <ul role="list" className="space-y-[0.7rem] my-[1rem] pl-[1rem]">
             {selectItems.map((e, i) => {
               return (
-                <li key={i} className="flex space-x-[0.7rem] items-center">
-                  <img src={e.img} alt="" />
+                <li
+                  role="listitem"
+                  key={i}
+                  className="flex space-x-[0.7rem] items-center"
+                >
+                  <img src={e.img} alt="logo" />
                   <p>{e.select}</p>
                 </li>
               );
@@ -90,7 +94,7 @@ let Company_dropdown = () => {
   let selectItems: string[] = ["History", "Our Team", "Blog"];
   let [toggleDD, setToggleDD] = useState<boolean>(false);
   return (
-    <li>
+    <li role="listitem">
       <button
         className="flex space-x-[0.8rem] items-center"
         onClick={() => setToggleDD(!toggleDD)}
@@ -103,10 +107,14 @@ let Company_dropdown = () => {
         />
       </button>
       {toggleDD && (
-        <ul className="space-y-[0.7rem] my-[1rem] pl-[1rem]">
+        <ul role="list" className="space-y-[0.7rem] my-[1rem] pl-[1rem]">
           {selectItems.map((e, i) => {
             return (
-              <li key={i} className="flex space-x-[0.7rem] items-center">
+              <li
+                role="listitem"
+                key={i}
+                className="flex space-x-[0.7rem] items-center"
+              >
                 <p>{e}</p>
               </li>
             );
