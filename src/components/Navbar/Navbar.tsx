@@ -23,7 +23,7 @@ import menu_logo from "/icon-menu.svg";
 export const ToggleContext: any = React.createContext("");
 
 export default function Navbar() {
-  let [toggleMenu, setToggleMenu] = useState<boolean>(true);
+  let [toggleMenu, setToggleMenu] = useState<boolean>(false);
   return (
     <>
       <header className="max-w-[64rem] mx-auto">
